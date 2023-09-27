@@ -12,7 +12,7 @@ class TrainsController extends Controller
     public function index()
     {
 
-        $trains = Train::whereDate('data_di_partenza', '>=', "2023-09-27")->get();
+        $trains = Train::whereDate('data_di_partenza', '>=', "2023-09-27")->OrderBy('data_di_partenza')->get();
 
         return view('home', ['trains' => $trains]);
     }
