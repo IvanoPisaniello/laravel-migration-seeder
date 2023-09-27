@@ -17,6 +17,14 @@ class TrainsTableSeeder extends Seeder
 
         $aziende = ["Trenitalia", "Italo"];
         $stazioni = ["Roma terimini", "Roma Tiburtina", "Firenze Santa Maria Novella", "Napoli Centrale", "Milano Centrale", "Benevento Centrale", "Torino Porta Nuova"];
+        $date = [
+            '2023-09-27',
+            '2023-09-22',
+            '2023-08-24',
+            '2023-07-06',
+            '2023-10-05',
+            '2023-12-07'
+        ];
 
 
         for ($i = 0; $i < 10; $i++) {
@@ -24,6 +32,7 @@ class TrainsTableSeeder extends Seeder
             $train->azienda = $aziende[array_rand($aziende)];
             $train->stazione_di_partenza = $stazioni[array_rand($stazioni)];
             $train->stazione_di_arrivo = $stazioni[array_rand($stazioni)];
+            $train->data_di_partenza = $date[array_rand($date)];
             $train->orario_di_partenza = $Faker->time();
             $train->orario_di_arrivo = $Faker->time();
             $train->codice_treno = $Faker->unique()->randomNumber(7);
